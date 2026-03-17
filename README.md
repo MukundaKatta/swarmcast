@@ -29,4 +29,4 @@ future = predictor.predict(steps=30)
 - **Benchmarks** — Rastrigin, Rosenbrock, Ackley, Sphere
 
 ## License
-MIT
+© 2026 Officethree Technologies. All Rights Reserved.
