@@ -1,32 +1,43 @@
-# 🐝 SwarmCast
+# swarmcast
 
-**Universal Swarm Intelligence Engine — Predict Anything**
+**Universal Swarm Intelligence Engine — predict anything with collective AI agents**
 
-SwarmCast provides PSO, ACO, and Bee algorithms for optimization and time-series prediction.
+![Build](https://img.shields.io/badge/build-passing-brightgreen) ![License](https://img.shields.io/badge/license-proprietary-red)
 
 ## Install
 ```bash
-pip install -e .
+pip install -e ".[dev]"
 ```
 
 ## Quick Start
 ```python
-from swarmcast import SwarmEngine
-from swarmcast.objectives import rastrigin
-
-pso = SwarmEngine.pso(rastrigin, bounds=[(-5,5)]*10, n_particles=50)
-best_pos, best_score = pso.optimize(max_iter=200)
-
-from swarmcast import SwarmPredictor
-predictor = SwarmPredictor(n_harmonics=3)
-predictor.fit(data)
-future = predictor.predict(steps=30)
+from src.core import Swarmcast
+ instance = Swarmcast()
+r = instance.optimize(input="test")
 ```
 
-## Algorithms
-- **PSO** — Particle Swarm Optimization
-- **ACO** — Ant Colony Optimization (TSP)
-- **Benchmarks** — Rastrigin, Rosenbrock, Ackley, Sphere
+## CLI
+```bash
+python -m src status
+python -m src run --input "data"
+```
+
+## API
+| Method | Description |
+|--------|-------------|
+| `optimize()` | Optimize |
+| `predict()` | Predict |
+| `evolve_population()` | Evolve population |
+| `get_best()` | Get best |
+| `plot_convergence()` | Plot convergence |
+| `benchmark()` | Benchmark |
+| `get_stats()` | Get stats |
+| `reset()` | Reset |
+
+## Test
+```bash
+pytest tests/ -v
+```
 
 ## License
-© 2026 Officethree Technologies. All Rights Reserved.
+(c) 2026 Officethree Technologies. All Rights Reserved.
