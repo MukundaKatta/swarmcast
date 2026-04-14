@@ -1,5 +1,7 @@
 # swarmcast — Universal Swarm Intelligence Engine — predict anything with collective AI agents
 
+**Live:** <https://mukundakatta.github.io/swarmcast/>
+
 Universal Swarm Intelligence Engine — predict anything with collective AI agents. swarmcast gives you a focused, inspectable implementation of that idea.
 
 ## Why swarmcast
