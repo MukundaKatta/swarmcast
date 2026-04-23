@@ -93,3 +93,17 @@ class SwarmEngine:
     def reset(self):
         self._n = 0
         self._log.clear()
+
+
+class Swarmcast(SwarmEngine):
+    """Public-facing Swarmcast API; wraps SwarmEngine with service metadata."""
+
+    def optimize(self, **kw):
+        result = super().optimize(**kw)
+        result["service"] = "swarmcast"
+        return result
+
+    def get_stats(self):
+        stats = super().get_stats()
+        stats["log_size"] = stats.pop("log")
+        return stats
